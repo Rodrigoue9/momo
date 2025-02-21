@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="envelope">
+    </div>
+    
+    <div class="card">
+      <div class="back"></div>
+      <div class="front">
+        <div class="f-box">
+          <img src="img/Sem Título-2.png" alt="">
+        </div>
+      </div>
+    
+      <div class="text-container">
+        <h1>Contador de Dias de Namoro</h1>
+        <p id="contador"></p>
+       
+      </div>
+    </div>
+</body>
+<script>
+    function calcularTempo() {
+        const dataInicio = new Date("2024-09-21"); // Data do início do namoro
+        const hoje = new Date();
+        
+        const diferencaDias = Math.floor((hoje - dataInicio) / (1000 * 60 * 60 * 24));
+        
+        let anos = hoje.getFullYear() - dataInicio.getFullYear();
+        let meses = hoje.getMonth() - dataInicio.getMonth();
+        
+        if (meses < 0) {
+            anos--;
+            meses += 12;
+        }
+        
+        const totalMeses = anos * 12 + meses;
+        
+        document.getElementById("contador").innerText = `Estamos juntos há ${diferencaDias} dias / ${totalMeses} meses! ❤️`;
+    }
+    window.onload = calcularTempo;
+</script>
+</html>
