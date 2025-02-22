@@ -24,7 +24,20 @@
        
       </div>
     </div>
+    <audio id="musica" loop>
+      <source src="mp3/Paulinho Pedra Azul - Jardim da Fantasia ( Bem Te Vi )(MP3_160K).mp3" type="audio/mpeg">
+    </audio>
+    
+  
 </body>
+
+<script>
+  document.addEventListener("click", function() {
+      const audio = document.getElementById("musica");
+      audio.play().catch(error => console.log("Erro ao reproduzir a música:", error));
+  }, { once: true }); // Garante que a música só precise de um clique para iniciar
+</script>
+
 <script>
     function calcularTempo() {
         const dataInicio = new Date("2024-09-21"); // Data do início do namoro
